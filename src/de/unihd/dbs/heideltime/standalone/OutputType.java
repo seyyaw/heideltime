@@ -26,6 +26,11 @@ public enum OutputType {
 			return "timeml";
 		}
 	},
+	NEWSLEAK {
+		public String toString() {
+			return "newsleak";
+		}
+	},
 	XMI {
 		public String toString() {
 			return "xmi";

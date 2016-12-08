@@ -45,6 +45,7 @@ import de.unihd.dbs.heideltime.standalone.components.impl.HunPosTaggerWrapper;
 import de.unihd.dbs.heideltime.standalone.components.impl.IntervalTaggerWrapper;
 import de.unihd.dbs.heideltime.standalone.components.impl.JCasFactoryImpl;
 import de.unihd.dbs.heideltime.standalone.components.impl.JVnTextProWrapper;
+import de.unihd.dbs.heideltime.standalone.components.impl.NewsLeakTimeFormater;
 import de.unihd.dbs.heideltime.standalone.components.impl.StanfordPOSTaggerWrapper;
 import de.unihd.dbs.heideltime.standalone.components.impl.TimeMLResultFormatter;
 import de.unihd.dbs.heideltime.standalone.components.impl.TreeTaggerWrapper;
@@ -428,7 +429,11 @@ public class HeidelTimeStandalone {
 	private ResultFormatter getFormatter() {
 		if (outputType.toString().equals("xmi")){
 			return new XMIResultFormatter();
-		} else {
+		} 
+		if (outputType.toString().equals("newsleak")){
+			return new NewsLeakTimeFormater();
+		}
+		 else {
 			return new TimeMLResultFormatter();
 		}
 	}
